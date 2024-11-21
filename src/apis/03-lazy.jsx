@@ -3,6 +3,7 @@ import { lazy, Suspense, useState } from 'react';
 // Cargar dinámicamente el componente
 const LazyLoadedComponent = lazy(() => import('../components/LazyLoadComponent.jsx'));
 
+// Se podrai cargar un skeleon un loader etc
 export const LazyExample = () => {
     const [shouldLoad, setShouldLoad] = useState(false); // Inicialmente false, no cargamos el componente
 

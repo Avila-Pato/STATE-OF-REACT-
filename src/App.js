@@ -3,6 +3,7 @@ import { CreateContextPage } from './apis/00-create-context.jsx';
 import { CreatePortalPage } from './apis/01-create-portal';
 import { FragmentExample } from './apis/02-fragment.jsx';
 import { LazyExample } from './apis/03-lazy';
+import { MemoExample } from './apis/04-memo';
 
 function App() {
   const [currentApi, setCurrentApi] = useState("CreateContextPage");
@@ -23,6 +24,10 @@ function App() {
       
         case "CreateLazyLoad":
           return <LazyExample />
+
+          case "CreateMemo":
+          return <MemoExample />
+
 
       default:
         return <h2>Selecciona una API para mostrar</h2>;
@@ -89,6 +94,20 @@ function App() {
             }}
           >
             API: LazyLoad
+          </button>
+          <button
+            onClick={() => setCurrentApi("CreateMemo")}
+            style={{
+              margin: "0 10px",
+              padding: "10px",
+              backgroundColor: "#28a745",
+              color: "#fff",
+              border: "none",
+              borderRadius: "5px",
+              cursor: "pointer",
+            }}
+          >
+            API: Memo
           </button>
         </nav>
       </header>
